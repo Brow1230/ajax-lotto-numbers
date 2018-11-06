@@ -1,36 +1,85 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700');
+/**********/
+/*DEFAULTS*/
+/**********/
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 *::after,
-*::before{
+*::before {
     box-sizing: inherit;
 }
-html{
+
+html {
     font-size: 16px;
-    font-family: Titillium , Helvetica, Arial, sans-serif;
+    font-family: Titillium, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    margin: auto;
+    padding: 1rem;
 }
 
-
-.hide{
-    display:none;
-}
-
-header{
-    padding:1rem 2rem;
+header {
+    padding: 1rem 2rem;
     color: black;
+    border: 1px solid #558BAE;
+    background-color: #B0DFE5;
+    text-align: center;
 }
 
-section{
-    padding:1rem 2rem;
+div {
+    display:flex;
 }
-.page{
-    display:block;
+h1 {
+    font-size: 2.827rem;
 }
-.show{
+section {
+    padding: 1rem 2rem;
+}
+p{
+    padding:0.5rem 0;
+}
+/***************/
+/*HOME SPECIFIC*/
+/***************/
+
+#home {
+    background-color: #EBEBEB;
+}
+
+input {
+    border: 1px solid #558BAE;
+}
+.formBox::placeholder {
+    color: grey;
+}
+.formBox{
+
+}
+input{
+    display:flex;
+}
+label,
+span{
+    
+}
+/***************/
+/*LIST SPECIFIC*/
+/***************/
+#list{
+    
+}
+/*********/
+/*TOGGLES*/
+/*********/
+
+.hide {
+    display: none;
+}
+
+.page {
     display: block;
 }

@@ -1,42 +1,30 @@
-/********************************
-Filename: main.js
-Author: @
-Description: 
-Date: 
-*********************************/
 document.addEventListener("DOMContentLoaded", init);
+let uri = "https://davidst.edumedia.ca/mad9014/nums.php";
 
-let url ; //to be filled in 
-    
-let req = new Request(url, {
-    method:"POST",
-    body:"form"
-});
+function init() {
+    document.getElementById("btnSend").addEventListener("click", getData);
 
-let pages = [];
-
-
-function init(){
-    pages = document.querySelectorAll(".page");
-    console.log(pages);
-    
-    
-    
-//  trying to organize pages
-    
-//    document.getElementById("btnSend").addEventListener("click", function (){
-//            pages[0].target.toggleClass("show");
-//            pages[1].target.toggleClass("show");
-//        
-//        });
-//    document.getElementById("btnBack").addEventListener("click", function(){
-//             pages[0].target.toggleClass("show");
-//             pages[1].target.toggleClass("show");
-//    });
 }
-    //let pages = [];
-    //
-    //function init () {
-    //    pages = document.querySelectorAll(".page");
-    //    console.log(pages);
-    //}
+
+function getData() {
+
+    let formdata = new FormData();
+    formdata.append("digits", document.getElementById("digits").value);
+    formdata.append("max", document.getElementById("max").value);
+    let request = new Request(uri, {
+        method: "POST",
+        mode: "cors",
+        body: formdata
+    });
+    fetch(request)
+        .then(function (response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
+        .catch(function (err) {
+            alert("error:" + err.message);
+        })
+}
