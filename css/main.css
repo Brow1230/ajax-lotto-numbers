@@ -56,30 +56,22 @@ input {
 .formBox::placeholder {
     color: grey;
 }
-.formBox{
-
-}
 input{
     display:flex;
 }
-label,
-span{
-    
-}
+
 /***************/
 /*LIST SPECIFIC*/
 /***************/
-#list{
-    
+.num_list{
+    display:block;
 }
 /*********/
 /*TOGGLES*/
 /*********/
-
-.hide {
-    display: none;
-}
-
 .page {
-    display: block;
+    display:block;
+}
+.hidden {
+    display:none;
 }
