@@ -11,12 +11,16 @@ function init() {
     document.getElementById("btnBack").addEventListener("click", function () {
         pages[0].classList.toggle("hidden");
         pages[1].classList.toggle("hidden");
+        let ul = document.querySelector(".num_list");
+        ul.textContent = " ";
+        
     });
 
     document.getElementById("btnSend").addEventListener("click", function () {
         pages[0].classList.toggle("hidden");
         pages[1].classList.toggle("hidden");
     });
+    document.getElementById("btnBack").addEventListener("click", )
 }
 /////////////////////////////////////////
 ///function to communicate with server///
@@ -31,31 +35,31 @@ function getData() {
         mode: "cors",
         body: formdata
     });
+
     fetch(request)
         .then(function (response) {
             console.log(response);
             return response.json();
         })
         .then(function (jsonData) {
-            console.log(jsonData);
-            let array = jsonData.numbers
-            console.log(array[0]);
-            
-            
-            let ul = document.getElementById("num_list");
+            console.log(jsonData.numbers);
+        
+        
+
+
+            let ul = document.querySelector(".num_list");
+                console.log(ul)
             let df = new DocumentFragment();
-        for (let i = 0; i <array.length; i++) {
-            let li = document.getElementById("li");
-                li.textContent = array[i];
-                li.className = "page";
-                df.appendChild(li)
-        }
-//            jsonData.numbers.forEach(function (number) {
-//                let li = document.getElementById("li");
-//                li.textContent = array[i];
-//                li.className = "page";
-//                df.appendChild(li)
-//            });
+             jsonData.numbers.forEach(function (item, index) {
+                let li = document.createElement("li");
+                console.log(li)
+
+                li.innerHTML = item;
+                console.log(item)
+                ul.appendChild(li)
+
+               
+            })
             ul.appendChild(df);
         })
         .catch(function (err) {

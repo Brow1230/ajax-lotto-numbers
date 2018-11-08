@@ -38,6 +38,7 @@ h1 {
 }
 section {
     padding: 1rem 2rem;
+    background-color: #EBEBEB;
 }
 p{
     padding:0.5rem 0;
@@ -47,7 +48,7 @@ p{
 /***************/
 
 #home {
-    background-color: #EBEBEB;
+    
 }
 
 input {
@@ -64,7 +65,23 @@ input{
 /*LIST SPECIFIC*/
 /***************/
 .num_list{
-    display:block;
+    display:grid;
+    grid-template-columns: 1fr ;
+    grid-gap:1rem;
+    padding: 0;
+    margin:0 auto;
+    
+}
+li{
+    font-size:2rem;
+    border: 1rem solid black;
+    background-color:#EBEBEB;
+    list-style-type: none;
+    margin; 1rem 1rem; 
+    padding 1rem;
+    text-align: center;
+    color:#558BAE;
+
 }
 /*********/
 /*TOGGLES*/
@@ -74,4 +91,39 @@ input{
 }
 .hidden {
     display:none;
+}
+/***************/
+/*MEDIA QUERIES*/
+/***************/
+
+@media all and (min-width:500px){
+    .num_list{
+        grid-template-columns: 1fr 1fr;
+    }
+@media all and (min-width:600px){
+    .num_list{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media all and (min-width:700px){
+    .num_list{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+@media all and (min-width:800px){
+    .num_list{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+@media all and (min-width:900px){
+    .num_list{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+@media all and (min-width:1000px){
+    .num_list{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+@media all and (min-width:1250px){
+    .num_list{
+        grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    }
+
 }
